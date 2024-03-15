@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  telegramwebapproman:
+    image: ${DOCKER_REGISTRY-}telegramwebapproman
+    build:
+      context: .
+      dockerfile: TelegramWebAppRoman\Dockerfile
+    ports:
+        - "8082:80"
