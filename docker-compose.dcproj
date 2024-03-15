@@ -4,7 +4,7 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Windows</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>a11989a8-d40b-4ad0-a5c1-6452e67416f6</ProjectGuid>
+    <ProjectGuid>f9f83f9d-1dcd-42a5-94cc-2fcb7c9cfe5c</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://{ServiceIPAddress}{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>telegramwebapproman</DockerServiceName>

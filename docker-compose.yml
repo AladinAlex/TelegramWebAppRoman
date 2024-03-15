@@ -1,10 +1,26 @@
 version: '3.4'
 
 services:
-  telegramwebapproman:
-    image: ${DOCKER_REGISTRY-}telegramwebapproman
-    build:
-      context: .
-      dockerfile: TelegramWebAppRoman\Dockerfile
+  # telegramwebapproman:
+  #   image: ${DOCKER_REGISTRY-}telegramwebapproman
+  #   build:
+  #     context: .
+  #     dockerfile: TelegramWebAppRoman\Dockerfile
+  
+  postgresDB:
+    container_name: postgresDB
+    restart: always
+    shm_size: 128mb
+    image: postgres:14.1-alpine
     ports:
-        - "8082:80"
+        - 5432:5432
+    environment:
+        POSTGRES_PASSWORD: "postgres"
+        POSTGRES_USER: "postgres"
+        POSTGRES_DB: "postgres"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
