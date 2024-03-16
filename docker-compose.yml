@@ -1,12 +1,22 @@
 version: '3.4'
 
 services:
-  # telegramwebapproman:
-  #   image: ${DOCKER_REGISTRY-}telegramwebapproman
-  #   build:
-  #     context: .
-  #     dockerfile: TelegramWebAppRoman\Dockerfile
-  
+  telegramwebapproman:
+    container_name: telegramwebapproman
+    image: ${DOCKER_REGISTRY-}telegramwebapproman
+    build:
+      context: .
+      dockerfile: TelegramWebAppRoman/Dockerfile
+
+  vue-app:
+    build:
+      context: .
+      dockerfile: TelegramWebAppRoman/clientapp/Dockerfile
+    container_name: vue-app
+    restart: always
+    ports:
+      - "8085:8085"
+
   postgresDB:
     container_name: postgresDB
     restart: always
@@ -24,3 +34,4 @@ services:
     restart: always
     ports:
       - 8080:8080
+
