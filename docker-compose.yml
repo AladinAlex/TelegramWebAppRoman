@@ -8,14 +8,14 @@ services:
       context: .
       dockerfile: TelegramWebAppRoman/Dockerfile
 
-  vue-app:
-    build:
-      context: .
-      dockerfile: TelegramWebAppRoman/clientapp/Dockerfile
-    container_name: vue-app
-    restart: always
-    ports:
-      - "8085:8085"
+  # vue-app:
+  #   build:
+  #     context: .
+  #     dockerfile: TelegramWebAppRoman/clientapp/Dockerfile
+  #   container_name: vue-app
+  #   restart: always
+  #   ports:
+  #     - "8085:8085"
 
   postgresDB:
     container_name: postgresDB
